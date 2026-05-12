@@ -228,6 +228,12 @@ h4 { font-size: 1.1rem; }
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 .btn-gold { background: var(--gold); color: var(--paper); }
 .btn-gold:hover { background: var(--gold-deep); }
+.btn-hero-primary {
+  padding: 18px 32px; font-size: 1rem; font-weight: 600;
+  box-shadow: 0 8px 24px rgba(193, 154, 91, 0.28);
+}
+.btn-hero-primary:hover { box-shadow: 0 12px 32px rgba(193, 154, 91, 0.38); transform: translateY(-2px); }
+.btn-hero-secondary { padding: 16px 26px; font-size: 0.95rem; }
 .btn svg { width: 16px; height: 16px; }
 
 .hero-meta {
@@ -1316,8 +1322,8 @@ h4 { font-size: 1.1rem; }
 /* Demo slides (Bloco 7 + 14) — DARK */
 .live-slide.demo-slide.active {
   display: grid !important;
-  grid-template-columns: 1.4fr 1fr; gap: 40px;
-  align-items: center; text-align: left; color: var(--paper);
+  grid-template-columns: 1fr; gap: 40px;
+  align-items: center; justify-items: center; text-align: center; color: var(--paper);
 }
 @media (max-width: 900px) { .live-slide.demo-slide.active { grid-template-columns: 1fr; } }
 .demo-main h2 {
@@ -1355,27 +1361,6 @@ h4 { font-size: 1.1rem; }
   box-shadow: 0 14px 40px rgba(184,153,104,0.4);
 }
 .demo-cta svg { width: 18px; height: 18px; }
-.demo-roteiro {
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px; padding: 22px;
-}
-.demo-roteiro-title {
-  font-size: 0.7rem; letter-spacing: 0.16em; font-weight: 700;
-  text-transform: uppercase; color: var(--gold-soft); margin-bottom: 14px;
-}
-.demo-roteiro ol { list-style: none; padding: 0; margin: 0; counter-reset: roteiro; }
-.demo-roteiro li {
-  counter-increment: roteiro; padding: 8px 0 8px 30px;
-  font-size: 0.88rem; color: rgba(250,250,247,0.85);
-  position: relative; border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.demo-roteiro li:last-child { border-bottom: 0; }
-.demo-roteiro li::before {
-  content: counter(roteiro); position: absolute; left: 0; top: 8px;
-  width: 20px; height: 20px; background: var(--gold); color: var(--ink);
-  border-radius: 50%; display: grid; place-items: center;
-  font-family: var(--mono); font-size: 0.7rem; font-weight: 700;
-}
 
 /* KPIs (Bloco 8) */
 .kpi-live-grid { display: grid; gap: 18px; margin-top: 20px; }
@@ -1778,8 +1763,7 @@ footer {
     <div class="nav-links">
       <a class="nav-link" data-nav="home">Início</a>
       <a class="nav-link" data-nav="crm">CRM Demo</a>
-      <a class="nav-link" data-nav="apresentacao">Apresentação</a>
-      <a class="nav-link" data-nav="live">Modo Live</a>
+      <a class="nav-link" data-nav="live">Apresentação</a>
     </div>
 
     <a class="nav-cta no-mobile" data-nav="crm">
@@ -1801,8 +1785,7 @@ footer {
       <div class="mobile-menu-title">Navegação</div>
       <a class="mobile-menu-link" data-nav="home">Início</a>
       <a class="mobile-menu-link" data-nav="crm">CRM Demo</a>
-      <a class="mobile-menu-link" data-nav="apresentacao">Apresentação do Projeto</a>
-      <a class="mobile-menu-link" data-nav="live">Modo Live Presentation</a>
+      <a class="mobile-menu-link" data-nav="live">Apresentação</a>
     </div>
     <div class="mobile-menu-section">
       <div class="mobile-menu-title">CRM — Áreas</div>
@@ -1834,16 +1817,12 @@ footer {
         Da reatividade analógica à inteligência preditiva. O SIG KIKO transforma a gestão dispersa do consultor imobiliário num verdadeiro Sistema de Apoio à Decisão — com integridade ativa, validação automática e métricas em tempo real.
       </p>
       <div class="hero-actions">
-        <button class="btn btn-primary" data-nav="crm">
-          Explorar o CRM
+        <button class="btn btn-gold btn-hero-primary" data-nav="live">
+          Ver Apresentação
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
-        <button class="btn btn-ghost" data-nav="apresentacao">
-          Ver Apresentação do Projeto
-        </button>
-        <button class="btn btn-gold" data-nav="live">
-          Modo Live
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+        <button class="btn btn-ghost btn-hero-secondary" data-nav="crm">
+          Explorar CRM Demo
         </button>
       </div>
 
@@ -1906,10 +1885,26 @@ footer {
       <div class="section-head">
         <div class="eyebrow">Duas formas de explorar</div>
         <h2>Um produto. Duas leituras.</h2>
-        <p>Esta aplicação serve simultaneamente como protótipo funcional do CRM e como apresentação interativa do projeto académico.</p>
+        <p>Esta aplicação serve simultaneamente como apresentação interativa do projeto académico e protótipo funcional do CRM.</p>
       </div>
 
       <div class="paths-grid">
+        <div class="path-card" data-nav="live">
+          <span class="path-tag">Storytelling do projeto</span>
+          <h3>Apresentação</h3>
+          <p>Defesa oral guiada em 14 blocos: do problema à solução, do modelo de dados à evolução futura — com fidelidade ao relatório PEA.</p>
+          <ul class="path-list">
+            <li>As-Is vs To-Be · BPMN 2.0</li>
+            <li>Modelo conceptual e normalização 3FN</li>
+            <li>SQL, formulários, macros e VBA</li>
+            <li>SWOT, equipa e evolução futura</li>
+          </ul>
+          <span class="path-cta">
+            Ver apresentação
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+
         <div class="path-card" data-nav="crm">
           <span class="path-tag">Protótipo demonstrativo</span>
           <h3>CRM Demo</h3>
@@ -1922,22 +1917,6 @@ footer {
           </ul>
           <span class="path-cta">
             Abrir CRM
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-
-        <div class="path-card" data-nav="apresentacao">
-          <span class="path-tag">Storytelling do projeto</span>
-          <h3>Apresentação</h3>
-          <p>Percorra o problema, a metodologia, o modelo de dados, os desafios e a evolução proposta — com fidelidade ao relatório PEA.</p>
-          <ul class="path-list">
-            <li>As-Is vs To-Be · BPMN 2.0</li>
-            <li>Modelo conceptual e normalização 3FN</li>
-            <li>SQL, formulários, macros e VBA</li>
-            <li>SWOT, equipa e evolução futura</li>
-          </ul>
-          <span class="path-cta">
-            Ver apresentação
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </span>
         </div>
@@ -2478,463 +2457,7 @@ footer {
   </div>
 </main>
 <!-- ============================================================
-     VIEW: APRESENTAÇÃO
-     ============================================================ -->
-<main id="view-apresentacao" class="view">
-  <div class="pres-wrap">
-
-    <!-- Section: Problema -->
-    <section class="pres-section" id="pres-problema">
-      <div class="pres-num">— 01</div>
-      <div class="eyebrow">O paradigma analógico</div>
-      <h2>O caos dos dados dispersos.</h2>
-      <p style="font-size:1.1rem; max-width:720px; margin-top:16px;">
-        O atual paradigma do setor imobiliário caracteriza-se por elevada competitividade e ciclos de negociação dependentes de múltiplas variáveis. A gestão informal — cadernos, folhas de cálculo isoladas, programas não interligados — revela-se insuficiente e até destrutiva.
-      </p>
-      <div class="spacer"></div>
-      <div class="compare">
-        <div class="compare-col bad">
-          <span class="compare-tag">As-Is · Cenário atual</span>
-          <h3>Gestão dispersa</h3>
-          <ul class="compare-list">
-            <li>Follow-ups esquecidos · perda de leads frias</li>
-            <li>Conflitos de agendamento e sobreposição de visitas</li>
-            <li>Impossibilidade de cruzar perfis de cliente com carteira</li>
-            <li>Dificuldade na gestão temporal de transações simultâneas</li>
-            <li>Métricas inexistentes ou calculadas manualmente</li>
-          </ul>
-        </div>
-        <div class="compare-col good">
-          <span class="compare-tag">To-Be · Visão SIG KIKO</span>
-          <h3>Inteligência ativa</h3>
-          <ul class="compare-list">
-            <li>Notificações automáticas e radar de leads estagnadas</li>
-            <li>Validação temporal nativa (datas no passado bloqueadas)</li>
-            <li>Cruzamento relacional Cliente ↔ Lead ↔ Imóvel ↔ Visita</li>
-            <li>Pipeline formalizado em 6 estados To-Be</li>
-            <li>KPIs em tempo real, sem esforço analítico manual</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Visão -->
-    <section class="pres-section dark" id="pres-visao">
-      <div class="pres-num">— 02</div>
-      <div class="eyebrow">Visão e proposta de valor</div>
-      <h2>Um verdadeiro Sistema de Apoio à Decisão.</h2>
-      <p style="font-size:1.15rem; max-width:780px; margin-top:16px;">
-        O SIG KIKO acelera o fecho de acordos informados, mitiga a perda de negócios e transforma a reatividade analógica numa postura proativa baseada em métricas rigorosas e históricos acionáveis.
-      </p>
-      <div class="spacer"></div>
-      <div class="pillar-grid" style="border:none; background:transparent;">
-        <div class="pillar" style="background:var(--ink-soft); border:1px solid rgba(184,153,104,0.2);">
-          <span class="pillar-num" style="color:var(--gold-soft);">— Tempo Real</span>
-          <h3 style="color:var(--paper);">Métricas instantâneas</h3>
-          <p style="color:rgba(250,250,247,0.8);">Extração de métricas de conversão imediatas, sem esforço analítico manual. Dashboards pré-computados para carregamento instantâneo.</p>
-        </div>
-        <div class="pillar" style="background:var(--ink-soft); border:1px solid rgba(184,153,104,0.2);">
-          <span class="pillar-num" style="color:var(--gold-soft);">— Integridade Ativa</span>
-          <h3 style="color:var(--paper);">Zero-Trust nas inserções</h3>
-          <p style="color:rgba(250,250,247,0.8);">O sistema nega e bloqueia ativamente ações ilógicas, garantindo coerência absoluta entre processos.</p>
-        </div>
-        <div class="pillar" style="background:var(--ink-soft); border:1px solid rgba(184,153,104,0.2);">
-          <span class="pillar-num" style="color:var(--gold-soft);">— Inteligência</span>
-          <h3 style="color:var(--paper);">Antecipação de mercado</h3>
-          <p style="color:rgba(250,250,247,0.8);">Dashboards dinâmicos que antecipam tendências de preços por zona, blindando argumentos de angariação.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Público-alvo -->
-    <section class="pres-section" id="pres-publico">
-      <div class="pres-num">— 03</div>
-      <div class="eyebrow">Público-alvo e escalabilidade</div>
-      <h2>Três fases. Um motor.</h2>
-      <p style="font-size:1.05rem; max-width:720px; margin-top:16px;">
-        Concebido com elasticidade para acompanhar a evolução do negócio: do consultor individual à gestão de carteiras de investidores.
-      </p>
-      <div class="spacer"></div>
-      <div class="paths-grid">
-        <div class="path-card" style="cursor:default;">
-          <span class="path-tag">Fase 1 · B2C</span>
-          <h3>Consultor Individual</h3>
-          <p>Otimização de gestão de clientes, leads e imóveis em carteira. Foco na atividade unipessoal de mediação.</p>
-        </div>
-        <div class="path-card" style="cursor:default;">
-          <span class="path-tag">Fase 2 · B2B</span>
-          <h3>Gestão de Equipas</h3>
-          <p>Adição da entidade Consultores. Níveis de acesso, partilha controlada e métricas por equipa.</p>
-        </div>
-      </div>
-      <div class="spacer-sm"></div>
-      <div class="path-card" style="cursor:default; max-width:640px; margin:0 auto;">
-        <span class="path-tag">Fase 3 · B2B Premium</span>
-        <h3>Asset Management</h3>
-        <p>Gestão focada em nichos de alta rentabilidade: nómadas digitais, investidores estrangeiros (Golden Visa) e arrendamento comercial premium.</p>
-      </div>
-    </section>
-
-    <!-- Section: As-Is / To-Be -->
-    <section class="pres-section" id="pres-fluxo">
-      <div class="pres-num">— 04</div>
-      <div class="eyebrow">Engenharia de processos · BPMN 2.0</div>
-      <h2>O caminho crítico da lead.</h2>
-      <p style="margin-top:16px;">O modelo To-Be formaliza os 6 estados pelos quais uma Lead tem obrigatoriamente de transitar. O sistema rejeita atualizações para "Acordo" se as etapas anteriores não estiverem documentadas.</p>
-      <div class="spacer"></div>
-      <div class="flow">
-        <div class="flow-step"><div class="flow-step-num">01</div><div class="flow-step-name">Nova Lead</div><div class="flow-step-meta">Captura inicial</div></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-step-num">02</div><div class="flow-step-name">Qualificação</div><div class="flow-step-meta">RN3 ativa</div></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-step-num">03</div><div class="flow-step-name">Visita Agendada</div><div class="flow-step-meta">&gt;= Date()</div></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-step-num">04</div><div class="flow-step-name">Visita Realizada</div><div class="flow-step-meta">Presença confirmada</div></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-step-num">05</div><div class="flow-step-name">Proposta</div><div class="flow-step-meta">Negociação</div></div>
-        <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-        <div class="flow-step"><div class="flow-step-num">06</div><div class="flow-step-name">Acordo Fechado</div><div class="flow-step-meta">RN1 verificada</div></div>
-      </div>
-    </section>
-
-    <!-- Section: Regras de negócio -->
-    <section class="pres-section dark" id="pres-regras">
-      <div class="pres-num">— 05</div>
-      <div class="eyebrow">Os quatro pilares · RN1 a RN4</div>
-      <h2>Integridade não é configuração. É arquitetura.</h2>
-      <p style="margin-top:16px; max-width:720px;">As quatro regras de negócio formalizadas no projeto transformam o SIG KIKO numa plataforma ativa de validação — não um simples repositório.</p>
-      <div class="spacer"></div>
-      <div class="rn-grid">
-        <div class="rn-card locked" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <div class="rn-head"><div class="rn-num">RN1</div><h3 class="rn-title" style="color:var(--paper);">Acordos exigem visita</h3></div>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Matematicamente impossível assinar um acordo sem visita registada com presença efetiva.</p>
-        </div>
-        <div class="rn-card locked" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <div class="rn-head"><div class="rn-num">RN2</div><h3 class="rn-title" style="color:var(--paper);">Imóveis com docs</h3></div>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Recusa a inserção de novas angariações sem documentação técnica mínima anexada.</p>
-        </div>
-        <div class="rn-card locked" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <div class="rn-head"><div class="rn-num">RN3</div><h3 class="rn-title" style="color:var(--paper);">Qualificação obrigatória</h3></div>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Lead só é ativada após preenchimento estrito de orçamento máximo e zona de preferência.</p>
-        </div>
-        <div class="rn-card dynamic" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <div class="rn-head"><div class="rn-num">RN4</div><h3 class="rn-title" style="color:var(--paper);">Cálculos em runtime</h3></div>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Proibição de armazenamento físico de variáveis dependentes (ex: preço/m²). Cálculos puramente em runtime.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Modelo de dados -->
-    <section class="pres-section" id="pres-modelo">
-      <div class="pres-num">— 06</div>
-      <div class="eyebrow">Modelo conceptual e lógico</div>
-      <h2>Da realidade ao schema relacional.</h2>
-      <p style="margin-top:16px;">O Modelo Conceptual identificou quatro entidades basilares com cardinalidades 1:N. A transição para o Modelo Lógico assegurou conformidade com a 3ª Forma Normal.</p>
-      <div class="spacer"></div>
-
-      <div class="two-col even">
-        <div class="card">
-          <div class="card-head"><h3>Cardinalidades MCD</h3></div>
-          <div class="card-body">
-            <ul style="list-style:none; padding:0;">
-              <li style="padding:12px 0; border-bottom:1px solid var(--line-soft);"><strong style="color:var(--ink);">Cliente (1)</strong> possui <strong style="color:var(--ink);">Leads (N)</strong></li>
-              <li style="padding:12px 0; border-bottom:1px solid var(--line-soft);"><strong style="color:var(--ink);">Proprietário (1)</strong> detém <strong style="color:var(--ink);">Imóveis (N)</strong></li>
-              <li style="padding:12px 0;"><strong style="color:var(--ink);">Imóvel (1)</strong> é alvo de <strong style="color:var(--ink);">Visitas (N)</strong></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-head"><h3>Normalização aplicada</h3></div>
-          <div class="card-body">
-            <ul style="list-style:none; padding:0; font-size:0.9rem;">
-              <li style="padding:10px 0; border-bottom:1px solid var(--line-soft);"><strong>1FN ·</strong> atributos atómicos (um telefone por campo)</li>
-              <li style="padding:10px 0; border-bottom:1px solid var(--line-soft);"><strong>2FN ·</strong> dependência integral da chave primária</li>
-              <li style="padding:10px 0;"><strong>3FN ·</strong> dependências transitivas eliminadas (ex: Preço/m²)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="spacer"></div>
-      <h3 style="margin-bottom:8px;">Schema original do projeto</h3>
-      <p class="muted text-small" style="margin-bottom:16px;">Tabelas extraídas diretamente do ficheiro <code class="mono">Projeto_final2.accdb</code></p>
-      <div class="er-diagram">
-        <div class="er-entity">
-          <div class="er-entity-head"><span class="er-entity-name">Cliente</span><span class="er-entity-cardinality">1</span></div>
-          <ul class="er-fields">
-            <li class="er-field pk"><span>ID</span><span class="er-type">PK</span></li>
-            <li class="er-field"><span>Nome</span><span class="er-type">Text</span></li>
-            <li class="er-field"><span>Telefone</span><span class="er-type">Long</span></li>
-            <li class="er-field fk"><span>ID_Estado</span><span class="er-type">FK</span></li>
-          </ul>
-        </div>
-        <div class="er-entity">
-          <div class="er-entity-head"><span class="er-entity-name">Casa</span><span class="er-entity-cardinality">N</span></div>
-          <ul class="er-fields">
-            <li class="er-field pk"><span>ID</span><span class="er-type">PK</span></li>
-            <li class="er-field"><span>Tipologia</span><span class="er-type">Text</span></li>
-            <li class="er-field"><span>AreaBruta</span><span class="er-type">m²</span></li>
-            <li class="er-field"><span>Preco</span><span class="er-type">€</span></li>
-          </ul>
-        </div>
-        <div class="er-entity">
-          <div class="er-entity-head"><span class="er-entity-name">Tarefa</span><span class="er-entity-cardinality">N</span></div>
-          <ul class="er-fields">
-            <li class="er-field pk"><span>ID</span><span class="er-type">PK</span></li>
-            <li class="er-field"><span>Titulo</span><span class="er-type">Text</span></li>
-            <li class="er-field fk"><span>ID_Cliente</span><span class="er-type">FK</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: SQL / VBA -->
-    <section class="pres-section" id="pres-sql">
-      <div class="pres-num">— 07</div>
-      <div class="eyebrow">Motor SQL · Formulários · VBA</div>
-      <h2>Onde a interface relacional ganha vida.</h2>
-
-      <div class="spacer"></div>
-
-<pre class="code-block"><span class="code-block-label">SQL · Radar de ineficiências</span>
-<span class="com">-- Identifica leads qualificadas mas sem visita</span>
-<span class="kw">SELECT</span> L.Nome_Cliente, L.Telemovel, L.Zona_Interesse, I.Tipologia
-<span class="kw">FROM</span> LEAD <span class="kw">AS</span> L
-<span class="kw">LEFT JOIN</span> VISITA <span class="kw">AS</span> V <span class="kw">ON</span> L.ID_Lead = V.ID_Lead
-<span class="kw">WHERE</span> V.ID_Visita <span class="kw">IS NULL</span> <span class="kw">AND</span> L.Estado = <span class="str">'Qualificada'</span>;</pre>
-
-<pre class="code-block"><span class="code-block-label">SQL · Atualização atómica</span>
-<span class="kw">UPDATE</span> LEAD
-<span class="kw">SET</span> Estado = <span class="str">'Angariação Fechada'</span>, Data_Fecho = Date()
-<span class="kw">WHERE</span> ID_Lead = [Insira o ID da Lead a Fechar];</pre>
-
-<pre class="code-block"><span class="code-block-label">VBA · Validação RN1</span>
-<span class="kw">Private Sub</span> Form_BeforeUpdate(Cancel <span class="kw">As Integer</span>)
-  <span class="kw">If</span> Me.Estado_Atual = <span class="str">"Acordo"</span> <span class="kw">Then</span>
-    <span class="kw">If</span> DCount(<span class="str">"*"</span>, <span class="str">"VISITA"</span>, <span class="str">"ID_Lead = "</span> &amp; Me.ID_Lead &amp; _
-       <span class="str">" AND Presenca_Confirmada = True"</span>) = <span class="num">0</span> <span class="kw">Then</span>
-      MsgBox <span class="str">"Operação bloqueada. Sem visita validada."</span>, vbCritical
-      Me.Undo : Cancel = <span class="kw">True</span>
-    <span class="kw">End If</span>
-  <span class="kw">End If</span>
-<span class="kw">End Sub</span></pre>
-    </section>
-
-    <!-- Section: KPIs -->
-    <section class="pres-section" id="pres-kpis">
-      <div class="pres-num">— 08</div>
-      <div class="eyebrow">Métricas de validação</div>
-      <h2>Três KPIs estratégicos.</h2>
-      <p style="margin-top:16px;">Os indicadores definidos no relatório transformam dados transacionais em inteligência comercial acionável.</p>
-      <div class="spacer"></div>
-
-      <div class="rn-grid">
-        <div class="rn-card">
-          <div class="rn-head"><div class="rn-num" style="background:var(--gold);">%</div><h3 class="rn-title">Taxa de Conversão de Leads</h3></div>
-          <p class="rn-desc">Avaliação precisa do poder de negociação e fecho persuasivo do consultor.</p>
-          <div class="rn-demo">
-            <div class="mono text-small" style="color:var(--text-soft);">(Acordos Fechados / Total Leads Qualificadas) × 100</div>
-          </div>
-        </div>
-        <div class="rn-card">
-          <div class="rn-head"><div class="rn-num" style="background:var(--gold);">€</div><h3 class="rn-title">Preço Médio por m²</h3></div>
-          <p class="rn-desc">Monitorização dinâmica de tendências para blindar argumentos de venda na angariação. Suportado pela RN4 em tempo real.</p>
-          <div class="rn-demo">
-            <div class="mono text-small" style="color:var(--text-soft);">AVG(Preço / Área) GROUP BY Zona</div>
-          </div>
-        </div>
-        <div class="rn-card">
-          <div class="rn-head"><div class="rn-num" style="background:var(--gold);">⚖</div><h3 class="rn-title">Taxa de Eficácia de Visitas</h3></div>
-          <p class="rn-desc">Métrica clínica para aferir o alinhamento entre as casas mostradas e o real perfil financeiro da Lead.</p>
-          <div class="rn-demo">
-            <div class="mono text-small" style="color:var(--text-soft);">(Visitas c/ Proposta / Total Visitas) × 100</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Desafios -->
-    <section class="pres-section" id="pres-desafios">
-      <div class="pres-num">— 09</div>
-      <div class="eyebrow">Desafios encontrados</div>
-      <h2>Os obstáculos do desenvolvimento.</h2>
-      <p style="margin-top:16px;">O sucesso de qualquer Sistema de Informação Organizacional não reside unicamente no software escolhido, mas na perfeita aderência entre as ferramentas digitais e o modelo de negócio.</p>
-      <div class="spacer"></div>
-
-      <div class="rn-grid">
-        <div class="rn-card">
-          <h3 class="rn-title" style="margin-bottom:10px;">Normalização de moradas</h3>
-          <p class="rn-desc">Reconciliação de freguesias urbanas e zonas comerciais alargadas. Resolvido com tabelas de domínio estritas — impossível inserir "LX" e "Lisboa" em simultâneo.</p>
-        </div>
-        <div class="rn-card">
-          <h3 class="rn-title" style="margin-bottom:10px;">Lógica VBA avançada</h3>
-          <p class="rn-desc">Onde as Validation Rules nativas se esgotam, o VBA assume — exigindo desenvolvimento cuidado dos eventos BeforeUpdate e do tratamento de erros.</p>
-        </div>
-        <div class="rn-card">
-          <h3 class="rn-title" style="margin-bottom:10px;">Equilíbrio simplicidade × robustez</h3>
-          <p class="rn-desc">Interface simples para o consultor, mantendo back-office com integridade rigorosa alinhada com princípios da ISO 27001.</p>
-        </div>
-        <div class="rn-card">
-          <h3 class="rn-title" style="margin-bottom:10px;">Limitação do paradigma desktop</h3>
-          <p class="rn-desc">MS Access é formidável como SGBDR pedagógico, mas inviabiliza trabalho colaborativo assíncrono e mobilidade no terreno — daí a evolução proposta.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: SWOT -->
-    <section class="pres-section" id="pres-swot">
-      <div class="pres-num">— 10</div>
-      <div class="eyebrow">Análise SWOT</div>
-      <h2>Forças, fraquezas, oportunidades e ameaças.</h2>
-      <div class="swot">
-        <div class="swot-cell s">
-          <div class="swot-letter">S</div>
-          <div class="swot-title">Strengths</div>
-          <ul class="swot-list">
-            <li>Arquitetura relacional rigorosa em 3FN</li>
-            <li>Validações ativas RN1–RN4 em VBA</li>
-            <li>Proibição de registos órfãos via integridade referencial</li>
-            <li>KPIs com fórmulas claras e auditáveis</li>
-          </ul>
-        </div>
-        <div class="swot-cell w">
-          <div class="swot-letter">W</div>
-          <div class="swot-title">Weaknesses</div>
-          <ul class="swot-list">
-            <li>Paradigma desktop — sem mobilidade nativa</li>
-            <li>Limitação a single-user no MS Access</li>
-            <li>Ausência de API para integrações externas</li>
-            <li>Trabalho colaborativo assíncrono inviável</li>
-          </ul>
-        </div>
-        <div class="swot-cell o">
-          <div class="swot-letter">O</div>
-          <div class="swot-title">Opportunities</div>
-          <ul class="swot-list">
-            <li>Migração para arquitetura Cloud-Native (PostgreSQL)</li>
-            <li>Nichos premium: Golden Visa, nómadas digitais</li>
-            <li>Integrações com simuladores de crédito habitação</li>
-            <li>Mapeamento georreferenciado de preços</li>
-          </ul>
-        </div>
-        <div class="swot-cell t">
-          <div class="swot-letter">T</div>
-          <div class="swot-title">Threats</div>
-          <ul class="swot-list">
-            <li>Desintermediação digital (peer-to-peer)</li>
-            <li>Proptechs com Avaliação Automática (AVMs)</li>
-            <li>Crescente comoditização do consultor tradicional</li>
-            <li>Elevada competitividade no setor</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Equipa -->
-    <section class="pres-section" id="pres-equipa">
-      <div class="pres-num">— 11</div>
-      <div class="eyebrow">Equipa e papéis</div>
-      <h2>Os bastidores do projeto.</h2>
-      <p style="margin-top:16px;">Estrutura organizada estrategicamente, com divisão clara de responsabilidades entre visão de negócio, modelação de processos e implementação técnica.</p>
-
-      <div class="team-hero">
-        <img src="assets/team/team-trio.jpg" alt="Francisco, Sofia e Guilherme — Equipa SIG KIKO" />
-        <div class="team-hero-caption">"Por onde é que começamos?" — Sessão de trabalho · ISCAL</div>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo placeholder">
-            <span class="team-photo-initials">FS</span>
-          </div>
-          <div class="team-info">
-            <div class="team-name">Francisco Soares</div>
-            <div class="team-role">Process Owner</div>
-            <p class="team-bio">Visão macro, definição da cadeia de valor, requisitos do negócio e alinhamento estratégico. Identificação das necessidades operacionais do consultor imobiliário.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-photo placeholder">
-            <span class="team-photo-initials">SA</span>
-          </div>
-          <div class="team-info">
-            <div class="team-name">Sofia Almeida</div>
-            <div class="team-role">Process Designer</div>
-            <p class="team-bio">Tradução dos requisitos para diagramas BPMN 2.0, fluxos e modelação concetual de dados. Garantia de coerência lógica e eficiência processual.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-photo placeholder">
-            <span class="team-photo-initials">GC</span>
-          </div>
-          <div class="team-info">
-            <div class="team-name">Guilherme Cavaco</div>
-            <div class="team-role">Process Manager</div>
-            <p class="team-bio">Coordenação técnica, normalização (1FN→3FN), desenvolvimento físico em MS Access (SQL, Macros, VBA) e supervisão dos testes de integridade.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="spacer"></div>
-      <h3 style="margin-bottom:16px;">Bastidores</h3>
-      <div class="team-bts">
-        <img src="assets/team/team-francisco-sofia.jpg" alt="Francisco e Sofia — desenvolvimento conjunto" />
-        <img src="assets/team/team-guilherme.jpg" alt="Guilherme — implementação técnica em Access" />
-      </div>
-    </section>
-
-    <!-- Section: Futuro -->
-    <section class="pres-section dark" id="pres-futuro">
-      <div class="pres-num">— 12</div>
-      <div class="eyebrow">Evolução proposta</div>
-      <h2>O próximo ciclo: SaaS Cloud-Native.</h2>
-      <p style="margin-top:16px; max-width:780px;">As portas para o desenvolvimento de um produto SaaS moderno estão abertas. O motor relacional e a modelação operativa estão consolidados. Falta agora envelopá-los numa camada UX premium e fluida.</p>
-      <div class="spacer"></div>
-
-      <div class="rn-grid">
-        <div class="rn-card" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <h3 class="rn-title" style="color:var(--paper);">SGBD Cloud Relacional</h3>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Migração de MS Access para PostgreSQL na infraestrutura cloud (Vercel + Neon). Preservar a 3FN rigorosa desenvolvida na Fase 1.</p>
-        </div>
-        <div class="rn-card" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <h3 class="rn-title" style="color:var(--paper);">Back-End APIs</h3>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Node.js / Python absorvendo a lógica VBA. State Machine (XState) para gerir o ciclo da Lead. Validações via Zod/Joi.</p>
-        </div>
-        <div class="rn-card" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <h3 class="rn-title" style="color:var(--paper);">Front-End mobile-first</h3>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">React/Next.js com TailwindCSS. Foco absoluto em mobile-first para acesso em tempo real no terreno.</p>
-        </div>
-        <div class="rn-card" style="background:var(--ink-soft); border-color:rgba(184,153,104,0.25);">
-          <h3 class="rn-title" style="color:var(--paper);">Integrações futuras</h3>
-          <p class="rn-desc" style="color:rgba(250,250,247,0.8);">Simuladores de crédito habitação (Banco de Portugal). Módulos georreferenciados de preços por zona. AVMs.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: Conclusão -->
-    <section class="pres-section" id="pres-conclusao">
-      <div class="pres-num">— 13</div>
-      <div class="eyebrow">Conclusão</div>
-      <h2>A simbiose perfeita entre tecnologia e negócio.</h2>
-      <p style="font-size:1.1rem; max-width:760px; margin-top:24px; line-height:1.7;">
-        O SIG KIKO atesta o profundo valor que a transição digital confere mesmo a negócios de estrutura unipessoal ou micro-teams. É um caso prático na demonstração de que a transformação de dados em inteligência de negócio eleva as conversões de venda, transformando reatividade numa postura proativa baseada em métricas rigorosas.
-      </p>
-      <div class="spacer"></div>
-      <div style="font-family:var(--serif); font-style:italic; font-size:clamp(1.3rem, 2.5vw, 2rem); color:var(--ink); border-left:3px solid var(--gold); padding-left:24px; line-height:1.4;">
-        "O êxito sistémico não advém puramente do código de software, mas do <em style="color:var(--gold-deep); font-style:normal;">rigor imaculado</em> e do perfeito encaixe entre a engenharia de dados e as dores reais da mediação."
-      </div>
-      <div class="spacer"></div>
-      <div class="hero-actions">
-        <button class="btn btn-primary" data-nav="crm">Voltar ao CRM</button>
-        <button class="btn btn-ghost" data-nav="live">Iniciar Modo Live</button>
-      </div>
-    </section>
-
-  </div>
-</main>
-
-<!-- ============================================================
-     LIVE PRESENTATION MODE v2 — DEFESA ORAL GUIADA (14 blocos)
+     APRESENTAÇÃO — DEFESA ORAL GUIADA (14 blocos)
      ============================================================ -->
 <div class="live-mode" id="liveMode">
   <div class="live-bar">
@@ -2943,7 +2466,7 @@ footer {
         <div class="brand-mark">K</div>
         <div class="brand-text">
           <span class="brand-name">SIG KIKO</span>
-          <span class="brand-sub">Modo apresentação</span>
+          <span class="brand-sub">Defesa oral · 14 blocos</span>
         </div>
       </div>
       <div class="live-act-indicator no-mobile">
@@ -3194,15 +2717,6 @@ footer {
           Abrir CRM agora
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-      </div>
-      <div class="demo-roteiro">
-        <div class="demo-roteiro-title">Roteiro do apresentador</div>
-        <ol>
-          <li>Mostrar o dashboard e os números atuais</li>
-          <li>Abrir o pipeline e mover uma lead</li>
-          <li>Tentar fechar acordo sem visita (mostra o bloqueio RN1)</li>
-          <li>Voltar ao Modo Live <kbd style="font-family:var(--mono); padding:1px 6px; background:rgba(255,255,255,0.1); border-radius:3px; color:var(--paper); font-size:0.75rem;">L</kbd></li>
-        </ol>
       </div>
     </div>
 
@@ -3485,18 +2999,17 @@ footer {
         <h4>Áreas</h4>
         <ul>
           <li><a data-nav="home">Início</a></li>
+          <li><a data-nav="live">Apresentação</a></li>
           <li><a data-nav="crm">CRM Demo</a></li>
-          <li><a data-nav="apresentacao">Apresentação</a></li>
-          <li><a data-nav="live">Modo Live</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Projeto</h4>
+        <h4>CRM — Áreas</h4>
         <ul>
-          <li><a data-nav="apresentacao">Problema</a></li>
-          <li><a data-nav="apresentacao">Regras de negócio</a></li>
-          <li><a data-nav="apresentacao">Modelo de dados</a></li>
-          <li><a data-nav="apresentacao">SWOT</a></li>
+          <li><a data-nav="crm" data-crm="dashboard">Dashboard</a></li>
+          <li><a data-nav="crm" data-crm="pipeline">Pipeline</a></li>
+          <li><a data-nav="crm" data-crm="leads">Leads</a></li>
+          <li><a data-nav="crm" data-crm="regras">Regras de negócio</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -4528,7 +4041,7 @@ async function init() {
 
   if (location.hash) {
     const h = location.hash.replace('#','');
-    if (['home','crm','apresentacao','live'].indexOf(h) !== -1) showView(h);
+    if (['home','crm','live'].indexOf(h) !== -1) showView(h);
   }
 }
 
